@@ -54,8 +54,10 @@
 	border: 1px solid;
 	border-color: black;
 	background-color: white;
-	text-align: center;
-	line-height: 18px;
+	display: flex;
+    	justify-content: center;
+    	align-content: center;
+    	flex-direction: column;
 	float: left;
 	cursor: pointer;
 }
