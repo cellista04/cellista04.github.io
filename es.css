@@ -54,6 +54,7 @@
 	border: 1px solid;
 	border-color: black;
 	background-color: white;
+	text-align: center;
 	float: left;
 	cursor: pointer;
 }
