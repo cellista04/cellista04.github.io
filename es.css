@@ -38,6 +38,7 @@
 	padding: 10px;
 	width: 160px;
 	height: 50px;
+	background-color: white;
 }
 #call_op_contest div{
 	margin: auto;
@@ -45,8 +46,8 @@
 	height: 50px;
 	border-radius: 60px;
 	border: 1px solid;
-	border-color: white;
-	background-color: black;
+	border-color: black;
+	background-color: white;
 	float: left;
 	cursor: pointer;
 }
