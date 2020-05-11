@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cellista04.github.io/es.css">
+		<title>Videollamadas</title>
+	</head>
+	<body>
+		<div id="registro">
+			<h4>Nueva videollamada</h4>
+			<form method="GET">
+				<input type="text" name="c" placeholder="Clave para tu videollamada"><br>
+				<button type="submit" disabled>Crear</button>
+			</form>
+			<h4>Unirse a una videollamada</h4>
+			<form method="GET">
+				<input type="text" name="c" placeholder="Clave de la videollamada"><br>
+				<button type="submit">Unirse</button>
+			</form>
+		</div>
+		<div id="call">
+			<div id="div_ver_video">
+				<div id="div_video">
+					<video id="video" autoplay></video>
+				</div>
+				<div id="call_op_contest">
+					<div onclick="microfono_call"></div>
+					<div onclick="finalizar_call"></div>
+					<div onclick="camara_call"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cellista04.github.io/fun.js"></script>
+	</body>
+</html>
