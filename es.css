@@ -28,12 +28,16 @@
 	width: 600px;
 	height: 400px;
 }
+#div_ver_video video{
+	margin: auto;
+	width:580px;
+	height: 240px;
+}
 #call_op_contest{
 	margin: auto;
 	padding: 10px;
 	width: 180px;
 	height: 40px;
-	float: down;
 }
 #call_op_contest div{
 	margin: auto;
