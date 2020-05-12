@@ -35,4 +35,14 @@ function conect(){
   }
 }
 function micro(){
+  let commands={
+    "hola":()=>{
+      alert ("hola");
+    },
+    "*tag":()=>{
+      alert ("*tag");
+    }
+  };
+  annyang.addcommands(commands);
+  annyang.start();
 }
