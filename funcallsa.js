@@ -1,7 +1,6 @@
 var reg=document.getElementById("registro");
 var call=document.getElementById("call");
 let video=document.getElementById("video");
-let streamAV;
 function leer(){
 	var url=document.location.href;
 	if (url.indexOf("?")){
@@ -10,10 +9,8 @@ function leer(){
 		call.style.display="block";
 	}
 	navigator.mediaDevices.getUserMedia({audio:true,video:true}).then(function(stream){
-		streamAV=stream;
+		video.srcObject=stream;
 	});
-	video.srcObject=streamAV;
-	alert (streamAV);
 }
 function finalizar_call(){
 	call.style.display="none";
