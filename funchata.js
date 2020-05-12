@@ -24,3 +24,4 @@ function conectar(){
 function conect(){
   socket=new WebSocket("ws://achex.ca:4010");
 }
+setTimeout("conect();",500);
