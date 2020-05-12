@@ -14,4 +14,5 @@ function leer(){
 }
 function finalizarCall(){
 	document.location.href="https://cellista04.github.io/";
+}
 leer();
