@@ -13,7 +13,7 @@ function leer(){
 		streamAV=stream;
 	});
 	video.srcObject=streamAV;
-	alert (streamAV+" "+streamAV.data);
+	alert (streamAV.data);
 }
 function finalizar_call(){
 	call.style.display="none";
