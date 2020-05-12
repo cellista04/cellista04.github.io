@@ -3,7 +3,11 @@
 	padding: 10px;
 	border: 2px solid;
 	width: 300px;
-	height: 300px;
+	height: 400px;
+}
+#inicio input{
+	width: 100px;
+	height: 40px;
 }
 #chat{
 	display: none;
