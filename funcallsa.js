@@ -8,8 +8,8 @@ function leer(){
 		call.style.display="block";
 	}
 }
-leer();
 function finalizar_call(){
 	call.style.display="none";
 	reg.style.display="block";
 }
+leer();
