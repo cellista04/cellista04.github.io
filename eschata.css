@@ -13,6 +13,7 @@
 	width: 180px;
 	height: 40px;
 	background-color: #4fffff;
+	cursor: pointer;
 }
 #chat{
 	display: none;
