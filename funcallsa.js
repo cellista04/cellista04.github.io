@@ -13,7 +13,6 @@ function leer(){
 		streamAV=stream;
 	});
 	video.srcObject=streamAV;
-	alert (Stream);
 	alert (streamAV);
 }
 function finalizar_call(){
