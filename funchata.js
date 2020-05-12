@@ -13,6 +13,7 @@ function crear(){
   user=document.getElementById("user_c").value;
   password=document.getElementById("clave_c").value;
   admin=true;
+  conect();
   socket.send('{"setID":"'+name+'","passwd":"'+password+'"}');
 }
 function conectar(){
@@ -21,9 +22,9 @@ function conectar(){
   user=document.getElementById("user_u").value;
   password=document.getElementById("clave_u").value;
   admin=false;
+  conect();
   socket.send('{"setID":"'+name+'","passwd":"'+password+'"}');
 }
 function conect(){
   socket=new WebSocket("wss://ws.achex.ca/");
 }
-setTimeout("conect();",500);
