@@ -1,0 +1,15 @@
+#opciones{
+	margin: auto;
+	padding: 10px;
+	border-radius: 20px;
+	border: 2px solid;
+	border-color: #4fffff;
+	width: 200px;
+	height: 300px;
+}
+#opciones button{
+	width: 180px;
+	height: 40px;
+	background-color: #4fffff;
+	cursor: pointer;
+}
