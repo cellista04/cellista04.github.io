@@ -1,6 +1,6 @@
 var inicio=document.getElementById("inicio");
 var chat=document.getElementById("chat");
-var mensajes=document.getElementById("mensajes");
+var mensajes="";
 var email;
 var name;
 var password;
@@ -30,5 +30,9 @@ function conect(){
   }
   socket.onerror=function(e){
     alert ("Error: "+e.data);
+    mensajes="Error: "+e.data+"\n"+mensajes;
+    document.getElementById("mensajes").value=mesnajes;
   }
+}
+function micro(){
 }
