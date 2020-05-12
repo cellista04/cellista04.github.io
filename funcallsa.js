@@ -13,6 +13,7 @@ function leer(){
 	});
 }
 function finalizar_call(){
+	alert ("Saliendo de la videollamada");
 	call.style.display="none";
 	reg.style.display="block";
 }
