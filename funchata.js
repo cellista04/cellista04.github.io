@@ -22,6 +22,6 @@ function conectar(){
   admin=false;
 }
 function conect(){
-  socket=new WebSocket("ws://achex.ca:4010");
+  socket=new WebSocket("wss://ws.achex.ca/");
 }
 setTimeout("conect();",500);
