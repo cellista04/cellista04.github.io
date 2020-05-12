@@ -10,5 +10,6 @@ function leer(){
 }
 leer();
 function finalizar_call(){
-	location.href="https://cellista04.github.io";
+	call.style.display="none";
+	reg.style.display="block";
 }
