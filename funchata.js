@@ -47,6 +47,6 @@ function micro(){
       alert ("*tag");
     }
   };
-  annyang.addcommands(commands);
+  annyang.addCommands(commands);
   annyang.start();
 }
