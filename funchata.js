@@ -8,7 +8,7 @@ var user;
 var socket;
 var admin=false;
 function crear(){
-  name=document.getElementById("name_C").value;
+  name=document.getElementById("name_c").value;
   email=document.getElementById("email_c").value;
   user=document.getElementById("user_c").value;
   password=document.getElementById("clave_c").value;
