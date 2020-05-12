@@ -10,5 +10,5 @@ function leer(){
 }
 leer();
 function finalizar_call(){
-	document.location.reload();
+	window.location.reload();
 }
