@@ -13,8 +13,5 @@ function leer(){
 	});
 }
 function finalizarCall(){
-	alert ("Saliendo de la videollamada");
-	call.style.display="none";
-	reg.style.display="block";
-}
+	document.location.href="https://cellista04.github.io/";
 leer();
