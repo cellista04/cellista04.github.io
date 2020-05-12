@@ -12,7 +12,7 @@ function leer(){
 		video.srcObject=stream;
 	});
 }
-function finalizar_call(){
+function finalizarCall(){
 	alert ("Saliendo de la videollamada");
 	call.style.display="none";
 	reg.style.display="block";
