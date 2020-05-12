@@ -1,7 +1,7 @@
 var reg=document.getElementById("registro");
 var call=document.getElementById("call");
 let video=document.getElementById("video");
-var streamAV;
+let streamAV;
 function leer(){
 	var url=document.location.href;
 	if (url.indexOf("?")){
