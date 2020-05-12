@@ -12,7 +12,7 @@ function leer(){
 	navigator.mediaDevices.getUserMedia({audio:true,video:true}).then(function(stream){
 		streamAV=stream;
 	});
-	video.strObject=streamAV;
+	video.srcObject=streamAV;
 }
 function finalizar_call(){
 	call.style.display="none";
