@@ -14,3 +14,10 @@ function crear(){
   password=document.getElementById("clave_c").value;
   admin=true;
 }
+function conectar(){
+  name=document.getElementById("name_u").value;
+  email=document.getElementById("email_u").value;
+  user=document.getElementById("user_u").value;
+  password=document.getElementById("clave_u").value;
+  admin=false;
+}
