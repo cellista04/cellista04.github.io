@@ -44,7 +44,7 @@ function micro(){
       alert ("hola");
     },
     "*tag":()=>{
-      alert ("*tag");
+      alert (*tag);
     }
   };
   annyang.addCommands(commands);
