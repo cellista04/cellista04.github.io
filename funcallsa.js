@@ -1,5 +1,6 @@
 var reg=document.getElementById("registro");
 var call=document.getElementById("call");
+let video=document.getElementById("video");
 var streamAV;
 function leer(){
 	var url=document.location.href;
@@ -11,6 +12,7 @@ function leer(){
 	navigator.mediaDevices.getUserMedia({audio:true,video:true}).then(function(stream){
 		streamAV=stream;
 	});
+	video.strObject=streamAV;
 }
 function finalizar_call(){
 	call.style.display="none";
