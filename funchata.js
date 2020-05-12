@@ -21,3 +21,6 @@ function conectar(){
   password=document.getElementById("clave_u").value;
   admin=false;
 }
+function conect(){
+  socket=new WebSocket("ws://achex.ca:4010");
+}
