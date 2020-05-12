@@ -1,5 +1,6 @@
 var inicio=document.getElementById("inicio");
 var chat=document.getElementById("chat");
+var btnmicro=document.getElementById("btnmicro");
 var mensajes="";
 var email;
 var name;
