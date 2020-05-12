@@ -8,6 +8,8 @@ var user;
 var socket;
 var admin=false;
 function crear(){
+  inicio.style.display="none";
+  chat.style.display="block";
   name=document.getElementById("name_c").value;
   email=document.getElementById("email_c").value;
   user=document.getElementById("user_c").value;
@@ -16,6 +18,8 @@ function crear(){
   conect();
 }
 function conectar(){
+  inicio.style.display="none";
+  chat.style.display="block";
   name=document.getElementById("name_u").value;
   email=document.getElementById("email_u").value;
   user=document.getElementById("user_u").value;
