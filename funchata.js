@@ -39,14 +39,8 @@ function conect(){
   }
 }
 function micro(){
-  let commands={
-    "hola":()=>{
-      alert ("hola");
-    },
-    "*tag":()=>{
-      alert (*tag);
-    }
-  };
-  annyang.addCommands(commands);
+  annyang.addCallback("result", frases => {
+    alert(frases);
+  });
   annyang.start();
 }
