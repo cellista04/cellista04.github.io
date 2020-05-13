@@ -45,6 +45,13 @@ function conect(){
   socket.onmessage=function(m){
     m=m.data;
     m=jQuery.parseJSON(m);
+    var ad=m.admin;
+    var c=m.contenido;
+    var command=m.command;
+    var u=m.user;
+    if (command=="user_mensaje"){
+      mensajes=u+": "+c+"\n"+mensajes;
+    }
   }
 }
 function micro(){
@@ -74,10 +81,12 @@ function micro(){
 }
 function enviar(){
   var men=document.getElementById("mensaje").value;
-  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_mensaje","contenido":"'+men+'"}');
+  socket.send('{"to":"'+name+'","admin":"'+admin+'","user":"'+user+'","command":"user_mensaje","contenido":"'+men+'"}');
   document.getElementById("mensaje").value="";
 }
 function salirChat(){
   socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_dissconect"}');
   socket.close();
+  chat.style.display="none";
+  inicio.style.display="block";
 }
