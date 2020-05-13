@@ -23,3 +23,16 @@ textarea{
 	width: 400px;
 	height: 200px;
 }
+#mens{
+	margin: auto;
+	padding: 10px;
+	border-radius: 20px;
+	border: 2px solid;
+	border-color: black;
+	width: 440px;
+	height: 200px;
+}
+#mens input{
+	width: 400px;
+	height: 40px;
+}
