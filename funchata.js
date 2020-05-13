@@ -39,6 +39,9 @@ function conect(){
     mensajes="Error: "+e.data+"\n"+mensajes;
     document.getElementById("mensajes").value=mesnajes;
   }
+  socket.onclose=function(){
+    alert ("Conexión cerrada");
+  }
 }
 function micro(){
   if (microAct==false){
@@ -60,6 +63,7 @@ function micro(){
     microAct=true;
   }
   else{
+    annyang.abort();
     btnmicro.innerHTML="Escribir con la voz";
     microAct=false;
   }
