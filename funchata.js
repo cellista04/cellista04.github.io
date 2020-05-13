@@ -46,7 +46,7 @@ function conect(){
   socket.onmessage=function(m){
     m=m.data;
     m=jQuery.parseJSON(m);
-    var ad=m.admin;
+    var ad_re=m.admin;
     var c=m.contenido;
     var command=m.command;
     var u=m.user;
@@ -63,8 +63,8 @@ function conect(){
       if (admin==true){
         alert (u+" se ha desconectado");
       }
-      else if (ad==true){
-        alert ("La reunión a finalizado");
+      else if (ad_re==false){
+        alert ("La reunión ha finalizado");
         salirChat();
       }
     }
