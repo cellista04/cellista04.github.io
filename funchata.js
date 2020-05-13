@@ -8,7 +8,7 @@ var password;
 var user;
 var socket;
 var admin=false;
-var micro=false;
+var microAct=false;
 function crear(){
   inicio.style.display="none";
   chat.style.display="block";
@@ -41,7 +41,7 @@ function conect(){
   }
 }
 function micro(){
-  if (micro==false){
+  if (microAct==false){
     let commands={
       "enviar mensaje":()=>{
         enviar();
@@ -57,11 +57,11 @@ function micro(){
     annyang.addCommands(commands);
     annyang.start();
     btnmicro.innerHTML="Apagar micrófono";
-    micro=true;
+    microAct=true;
   }
   else{
     btnmicro.innerHTML="Escribir con la voz";
-    micro=false;
+    microAct=false;
   }
 }
 function enviar(){
