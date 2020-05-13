@@ -2,7 +2,9 @@ var socket;
 var IP;
 function conectar(){
   socket=new WebSocket("wss://ws.achex.ca/");
-  socket.send('{"setID":"dizweb@dizweb.com","passwd":"dizwebpasswordocult"}');
+  socket.onopen=function(){
+    socket.send('{"setID":"dizweb@dizweb.com","passwd":"dizwebpasswordocult"}');
+  }
 }
 function enviar(){
   var user=document.getElementById("user").value;
