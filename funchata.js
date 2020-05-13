@@ -101,7 +101,7 @@ function enviar(){
   document.getElementById("mensaje").value="";
 }
 function salirChat(){
-  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_dissconnect"}');
+  socket.send('{"to":"'+name+'","admin":"'+admin+'","user":"'+user+'","command":"user_dissconnect"}');
   socket.close();
   chat.style.display="none";
   inicio.style.display="block";
