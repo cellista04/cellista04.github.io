@@ -42,6 +42,10 @@ function conect(){
   socket.onclose=function(){
     alert ("Conexión cerrada");
   }
+  socket.onmessage=function(m){
+    m=m.data;
+    m=jQuery.parseJSON(m);
+  }
 }
 function micro(){
   if (microAct==false){
