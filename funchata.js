@@ -8,6 +8,7 @@ var password;
 var user;
 var socket;
 var admin=false;
+var micro=false;
 function crear(){
   inicio.style.display="none";
   chat.style.display="block";
@@ -40,19 +41,28 @@ function conect(){
   }
 }
 function micro(){
-  let commands={
-    "enviar mensaje":()=>{
-      enviar();
-    },
-    "borrar mensaje":()=>{
-      document.getElementById("mensaje").value="";
-    },
-    "*work":(work)=>{
-      document.getElementById("mensaje").value=document.getElementById("mensaje").value+" "+work;
-    }
-  };
-  annyang.addCommands(commands);
-  annyang.start();
+  if (micro==false){
+    let commands={
+      "enviar mensaje":()=>{
+        enviar();
+      },
+      "borrar mensaje":()=>{
+        document.getElementById("mensaje").value="";
+      },
+      "*work":(work)=>{
+        document.getElementById("mensaje").value=document.getElementById("mensaje").value+" "+work;
+      }
+    };
+    annyang.setLanguage("es-ES");
+    annyang.addCommands(commands);
+    annyang.start();
+    btnmicro.innerHTML="Apagar micrófono";
+    micro=true;
+  }
+  else{
+    btnmicro.innerHTML="Escribir con la voz";
+    micro=false;
+  }
 }
 function enviar(){
   var men=document.getElementById("mensaje").value;
