@@ -70,6 +70,10 @@ function micro(){
 }
 function enviar(){
   var men=document.getElementById("mensaje").value;
-  socket.send('{"to":"'+name+'","command":"user_mensaje","contenido":"'+men+'"}');
+  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_mensaje","contenido":"'+men+'"}');
   document.getElementById("mensaje").value="";
+}
+function salirChat(){
+  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_dissconect"}');
+  socket.close();
 }
