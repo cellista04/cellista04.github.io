@@ -33,15 +33,15 @@ function conect(){
   socket=new WebSocket("wss://ws.achex.ca/");
   socket.onopen=function(){
     socket.send('{"setID":"'+name+'","passwd":"'+password+'"}');
-  }
+  };
   socket.onerror=function(e){
     alert ("Error: "+e.data);
     mensajes="Error: "+e.data+"\n"+mensajes;
     document.getElementById("mensajes").value=mesnajes;
-  }
+  };
   socket.onclose=function(){
     alert ("Conexión cerrada");
-  }
+  };
   socket.onmessage=function(m){
     m=m.data;
     m=jQuery.parseJSON(m);
@@ -51,8 +51,9 @@ function conect(){
     var u=m.user;
     if (command=="user_mensaje"){
       mensajes=u+": "+c+"\n"+mensajes;
+      document.getElementById("mensajes").value=mensajes;
     }
-  }
+  };
 }
 function micro(){
   if (microAct==false){
