@@ -33,11 +33,12 @@ textarea{
 	height: 280px;
 }
 #mens input{
-	width: 404px;
+	width: 402px;
 	height: 40px;
 }
 #mens button{
-	width: 120px;
+	width: 180px;
 	height: 40px;
 	background-color: #4fffff;
+	cursor: pointer;
 }
