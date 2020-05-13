@@ -17,16 +17,21 @@
 	margin: auto;
 	padding: 10px;
 	width: 400px;
-	height: 200px;
+	height: 300px;
 	border: 2px solid;
 	border-color: black;
 }
 #opinion textarea{
 	resize: none;
-	width: 300px;
+	width: 360px;
 	height: 100px;
 }
 #opinion input{
-	width: 302px;
+	width: 362px;
 	height:  30px;
+}
+#opinion button{
+	background-color: #4fffff;
+	width: 180px;
+	height: 40px;
 }
