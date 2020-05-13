@@ -59,6 +59,15 @@ function conect(){
         alert (u+" se ha conectado");
       }
     }
+    else if (command=="user_dissconnect"){
+      if (admin==true){
+        alert (u+" se ha desconectado");
+      }
+      else if (ad==true){
+        alert ("La reunión a finalizado");
+        salirChat();
+      }
+    }
   };
 }
 function micro(){
@@ -92,7 +101,7 @@ function enviar(){
   document.getElementById("mensaje").value="";
 }
 function salirChat(){
-  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_dissconect"}');
+  socket.send('{"to":"'+name+'","admin":"'+admin+'","command":"user_dissconnect"}');
   socket.close();
   chat.style.display="none";
   inicio.style.display="block";
