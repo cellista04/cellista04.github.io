@@ -103,6 +103,12 @@ function enviar(){
 function salirChat(){
   socket.send('{"to":"'+name+'","admin":"'+admin+'","user":"'+user+'","command":"user_dissconnect"}');
   socket.close();
+  mensajes="";
+  document.getElementById("mensajes").value=mensajes;
+  var inputs=document.getElementsByTagName("input");
+  for (var x in inputs){
+    inputs[x].value="";
+  }
   chat.style.display="none";
   inicio.style.display="block";
 }
