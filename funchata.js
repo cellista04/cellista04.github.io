@@ -41,10 +41,21 @@ function conect(){
 }
 function micro(){
   let commands={
+    "enviar mensaje":()=>{
+      enviar();
+    },
+    "borrar mensaje":()=>{
+      document.getElementById("mensaje").value="";
+    },
     "*work":(work)=>{
-      alert (work);
+      document.getElementById("mensaje").value=document.getElementById("mensaje").value+" "+work;
     }
   };
   annyang.addCommands(commands);
   annyang.start();
+}
+function enviar(){
+  var men=document.getElementById("mensaje").value;
+  socket.send('{"to":"'+name+'","command":"user_mensaje","contenido":"'+men+'"}');
+  document.getElementById("mensaje").value="";
 }
