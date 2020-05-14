@@ -16,6 +16,10 @@ function enviar(){
   document.getElementById("email").value="";
   document.getElementById("opinion_mensaje").value="";
 }
+function goService(){
+  socket.close();
+  document.location.href="https://cellista04.github.io/gastos.html";
+}
 function get_ip(obj){
   IP=obj.ip;
 }
