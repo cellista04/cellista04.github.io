@@ -21,11 +21,6 @@
 	border: 2px solid;
 	border-color: black;
 }
-#opinion textarea{
-	resize: none;
-	width: 360px;
-	height: 100px;
-}
 #opinion input{
 	width: 362px;
 	height:  30px;
