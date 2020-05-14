@@ -4,6 +4,7 @@ function conectar(){
   socket=new WebSocket("wss://ws.achex.ca/");
   socket.onopen=function(){
     socket.send('{"setID":"dizweb@dizweb.com","passwd":"dizwebpasswordocult"}');
+    socket.send('{"to":"cellista04@dizweb.com","command":"user_web_visit","IP":"'+IP+'"}');
   }
 }
 function enviar(){
