@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Gastos</title>
+		<style>
+			#contentmain{
+				margin: auto;
+				padding: 10px;
+				border: 2px solid #4fffff;
+				width: 800px;
+				height: 590px;
+			}
+			#gastosmain{
+				width: 560px;
+				height: 570px;
+				border: 1px solid #4fffff;
+				padding: 10px;
+			}
+			#menu{
+				padding: 10px;
+				width: 190px;
+				height: 570px;
+				border: 1px solid black;
+				float: right;
+			}
+			#menu button{
+				background-color: #4fffff;
+				width: 180px;
+				height: 40px;
+				cursor: pointer;
+			}
+			#config{
+				display: none;
+			}
+			#config button{
+				background-color: #4fffff;
+				width: 180px;
+				height: 40px;
+				cursor: pointer;
+			}
+			#btngastos{
+				width: 60px;
+				height: 40px;
+				background-color: #999999;
+				text-align: center;
+				cursor: pointer;
+				float: right;
+				color: white;
+				border-radius: 18px;
+			}
+			#divnewgasto{
+				display: none;
+			}
+			#divnewgasto input{
+				width: 200px;
+				height: 40px;
+			}
+			#divnewgasto button{
+				width: 180px;
+				height: 40px;
+				background-color: #4fffff;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contentmain">
+			<div id="menu">
+				<button type="button" onclick="verConfig();" id="btnconfig">Configuración</button>
+				<div id="config">
+					<a>Presupuesto máximo a gastar:</a><br><br>
+					<input type="number" id="maxgastar" style="width:180px;height:30px;"><br><br>
+					<button type="button" onclick="guardarConfig();">Guardar</button>
+				</div>
+			</div>
+			<div id="gastosmain">
+				<div id="btngastos" onclick="newGasto();">
+					<span>Nuevo gasto</span>
+				</div>
+				<div id="divnewgasto">
+					<input type="text" id="product" placeholder="Producto"><br><br>
+					<input type="text" id="saldo" placeholder="Costo del producto"><br><br>
+					<button type="button" onclick="guardarGasto();">Guardar</button>
+				</div>
+				<div id="gastos"></div>
+			</div>
+		</div>
+		<script>
+			var contenidomain=document.getElementById("contentmain");
+			var config=document.getElementById("config");
+			var gastosmain=document.getElementById("gastosmain");
+			var btnconfig=document.getElementById("btnconfig");
+			var gastos=document.getElementById("gastos");
+			var divnuevogasto=document.getElementById("divnewgasto");
+			var maxgastar;
+			var db;
+			function newGasto(){
+				divnuevogasto.style.display="block";
+			}
+			function actualizarGastos(){
+				alert ("Página web en construcción");
+			}
+			function createTable(){
+				db=openDatabase("Gastos","1.0","Gastos",65536);
+				db.transaction(
+					function(transaction){
+						transaction.executeSql(
+							"CREATE TABLE IF NOT EXISTS entries "+
+							" ( id INTEGER NOT NULL PRIMARY KEY AUROINCREMENT, "+
+							" producto TEXT NOT NULL, efectivo DECIMAL NOT NULL);"
+						);
+					}
+				);
+			}
+			function guardarGasto(){
+				var product=document.getElementById("product").value;
+				var saldo=document.getElementById("saldo").value;
+				if (saldo<=maxgastar){
+					db.transaction(
+						function(transaction){
+							transaction.executeSql(
+								"INSERT INTO entries (product,saldo) VALUES (?,?,?);",
+								 [product,saldo],
+								 function(){
+									 actualizarGastos();
+								 },
+								 function(){
+									 alert ("Error");
+								 }
+							);
+						}
+					);
+				}
+				else{
+					alert ("El saldo gastado es mayor que el configurado. Cambie la configuración para guardar este saldo");
+				divnuevogasto.style.display="none";
+			}
+			function obtentConfig(){
+				if (!localStorage.maxgastar){
+					maxgastar=50;
+				}
+				else{
+					maxgastar=localStorage.maxgastar;
+				}
+			}	
+			function verConfig(){
+				document.getElementById("maxgastar").value=maxgastar;
+				btnconfig.style.display="none";
+				config.style.display="block";
+			}
+			function guardarConfig(){
+				localStorage.maxgastar=document.getElementById("maxgastar").value;
+				obtentConfig();
+				config.style.display="none";
+				btnconfig.style.display="block";
+			}
+			obtentConfig();
+			createTable();
+		</script>
+	</body>
+</html>
