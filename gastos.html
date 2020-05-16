@@ -165,7 +165,7 @@
 				}
 				else if (!localStorage.maxgastar && localStorage.ids){
 					maxgastar=50;
-					ids=localStorage.ids;
+					ids=parseInt(localStorage.ids);
 				}
 				else if (!localStorage.ids && localStorage.maxgastar){
 					maxgastar=localStorage.maxgastar;
@@ -173,7 +173,7 @@
 				}
 				else{
 					maxgastar=localStorage.maxgastar;
-					ids=localStorage.ids;
+					ids=parseInt(localStorage.ids);
 				}
 			}	
 			function verConfig(){
