@@ -105,13 +105,13 @@
 			function actualizarGastos(){
 				gastos.innerHTML="";
 				for (var id=0;id<ids;id++){
+					alert (id);
 					db.transaction(
 						function(transaction){
 							transaction.executeSql(
 								"SELECT * FROM entries WHERE ID=?;",
 								[id],
 								function(transaction,results){
-									alert (id);
 									var row=results.rows.item(0);
 									var name_product=row.product;
 									var saldo_product=row.saldo;
