@@ -104,11 +104,9 @@
 			}
 			function actualizarGastos(){
 				gastos.innerHTML="";
-				for (var id=0;id<ids;id++){
-					alert ("1-"+id);
-					db.transaction(
+				db.transaction(
+					for (var id=0;id<ids;id++){
 						function(transaction){
-							alert ("2-"+id);
 							transaction.executeSql(
 								"SELECT * FROM entries WHERE ID=?;",
 								[id],
@@ -121,8 +119,8 @@
 								errorHandler
 							);
 						}
-					);
-				}
+					}
+				);
 			}
 			function createTable(){
 				db=openDatabase("Gastos","1.0","Gastos",65536);
