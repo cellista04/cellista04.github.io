@@ -105,10 +105,10 @@
 			function actualizarGastos(){
 				gastos.innerHTML="";
 				for (var id=0;id<ids;id++){
-					alert (id);
+					alert ("1-"+id);
 					db.transaction(
 						function(transaction){
-							alert (id);
+							alert ("2-"+id);
 							transaction.executeSql(
 								"SELECT * FROM entries WHERE ID=?;",
 								[id],
