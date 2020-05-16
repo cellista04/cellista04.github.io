@@ -108,6 +108,7 @@
 					alert (id);
 					db.transaction(
 						function(transaction){
+							alert (id);
 							transaction.executeSql(
 								"SELECT * FROM entries WHERE ID=?;",
 								[id],
