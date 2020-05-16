@@ -120,7 +120,7 @@
 					db.transaction(
 						function(transaction){
 							transaction.executeSql(
-								"INSERT INTO entries (product,saldo) VALUES (?,?,?);",
+								"INSERT INTO entries (product,saldo) VALUES (?,?);",
 								 [product,saldo],
 								 function(){
 									 actualizarGastos();
