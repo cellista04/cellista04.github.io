@@ -144,7 +144,7 @@
 								 function(){
 									 ids=ids+1;
 									 localStorage.ids=ids;
-									 for (var id=1;id<ids;id++){
+									 for (var id=0;id<ids;id++){
 									 	actualizarGastos();
 									 }
 								 },
@@ -193,7 +193,7 @@
 			}
 			obtentConfig();
 			createTable();
-			for (var id=1;id<ids;id++){
+			for (var id=0;id<ids;id++){
 				actualizarGastos();
 			}
 		</script>
