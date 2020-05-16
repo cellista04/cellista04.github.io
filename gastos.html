@@ -102,7 +102,7 @@
 			function newGasto(){
 				divnuevogasto.style.display="block";
 			}
-			function actualizarGastos(){
+			function actualizarGastos(id){
 				gastos.innerHTML="";
 				db.transaction(
 					function(transaction){
@@ -144,7 +144,9 @@
 								 function(){
 									 ids=ids+1;
 									 localStorage.ids=ids;
-									 actualizarGastos();
+									 for (var id=0;id<ids;id++){
+									 	actualizarGastos();
+									 }
 								 },
 								errorHandler
 							);
@@ -191,7 +193,9 @@
 			}
 			obtentConfig();
 			createTable();
-			actualizarGastos();
+			for (var id=0;id<ids;id++){
+				actualizarGastos();
+			}
 		</script>
 	</body>
 </html>
