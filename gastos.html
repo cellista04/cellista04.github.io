@@ -108,7 +108,7 @@
 					db.transaction(
 						function(transaction){
 							transaction.executeSql(
-								"SELECT * FROM entries WHERE id=? ORDER BY product;",
+								"SELECT * FROM entries WHERE id=?;",
 								[id],
 								function(transaction,results){
 									var row=results.rows.item(0);
