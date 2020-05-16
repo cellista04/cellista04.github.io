@@ -145,7 +145,7 @@
 									 ids=ids+1;
 									 localStorage.ids=ids;
 									 for (var id=0;id<ids;id++){
-									 	actualizarGastos();
+									 	actualizarGastos(id);
 									 }
 								 },
 								errorHandler
@@ -194,7 +194,7 @@
 			obtentConfig();
 			createTable();
 			for (var id=0;id<ids;id++){
-				actualizarGastos();
+				actualizarGastos(id);
 			}
 		</script>
 	</body>
