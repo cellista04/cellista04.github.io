@@ -111,7 +111,7 @@
 								"SELECT * FROM entries WHERE ID=?;",
 								[id],
 								function(transaction,results){
-									alert (results.rows.item(0).product+"/"+results.rows.item(1).product);
+									alert (results.rows.item(0).product);
 									var row=results.rows.item(0);
 									var name_product=row.product;
 									var saldo_product=row.saldo;
