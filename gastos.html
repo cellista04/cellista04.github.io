@@ -125,9 +125,7 @@
 								 function(){
 									 actualizarGastos();
 								 },
-								 function(){
-									 alert ("Error");
-								 }
+								errorHandler
 							);
 						}
 					);
@@ -155,6 +153,10 @@
 				obtentConfig();
 				config.style.display="none";
 				btnconfig.style.display="block";
+			}
+			function errorHandler(transaction,error){
+				alert("Error: "+error.message+" (Code: "+error.code+")");
+				return true;
 			}
 			obtentConfig();
 			createTable();
