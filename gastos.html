@@ -106,19 +106,17 @@
 				gastos.innerHTML="";
 				db.transaction(
 					function(transaction){
-						for (var id=0;id<ids;id++){
-							transaction.executeSql(
-								"SELECT * FROM entries WHERE ID=?;",
-								[id],
-								function(transaction,results){
-									var row=results.rows.item(0);
-									var name_product=row.product;
-									var saldo_product=row.saldo;
-									gastos.innerHTML="<div><a>"+name_product+"</a><br><a>"+saldo_product+"</a></div>"+gastos.innerHTML;
-								},
-								errorHandler
-							);
-						}
+						transaction.executeSql(
+							"SELECT * FROM entries WHERE ID=?;",
+							[id],
+							function(transaction,results){
+								var row=results.rows.item(0);
+								var name_product=row.product;
+								var saldo_product=row.saldo;
+								gastos.innerHTML="<div><a>"+name_product+"</a><br><a>"+saldo_product+"</a></div>"+gastos.innerHTML;
+							},
+							errorHandler
+						);
 					}
 				);
 			}
