@@ -79,8 +79,8 @@
 					<span>Nuevo gasto</span>
 				</div>
 				<div id="divnewgasto">
-					<input type="text" id="product" placeholder="Producto"><br><br>
-					<input type="text" id="saldo" placeholder="Costo del producto"><br><br>
+					<input type="text" id="producto_in" placeholder="Producto"><br><br>
+					<input type="number" id="saldo_in" placeholder="Costo del producto"><br><br>
 					<button type="button" onclick="guardarGasto();">Guardar</button>
 				</div>
 				<div id="gastos"></div>
@@ -114,8 +114,8 @@
 				);
 			}
 			function guardarGasto(){
-				var product=document.getElementById("product").value;
-				var saldo=document.getElementById("saldo").value;
+				var product=document.getElementById("producto_in").value;
+				var saldo=document.getElementById("saldo_in").value;
 				if (saldo<=maxgastar){
 					db.transaction(
 						function(transaction){
