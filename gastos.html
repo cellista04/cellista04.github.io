@@ -93,13 +93,29 @@
 			var btnconfig=document.getElementById("btnconfig");
 			var gastos=document.getElementById("gastos");
 			var divnuevogasto=document.getElementById("divnewgasto");
+			var ids=0;
 			var maxgastar;
 			var db;
 			function newGasto(){
 				divnuevogasto.style.display="block";
 			}
 			function actualizarGastos(){
-				alert ("Página web en construcción");
+				for (var id=1;id<ids;id++){
+					db.transaction(
+						function(transaction){
+							transaction.executeSql(
+								"SELECT * FROM entries WHERE id=? ORDER BY product;",
+								[id],
+								function(transaction,results){
+									var name_product=results.rows.item(1);
+									var saldo_product=results.rows.item(2);
+									gastos.innerHTML="<div><a>"+name_product+"</a><br><a>"+saldo_product+"</a></div>"+gastos.innerHTML;
+								},
+								errorHandler
+							);
+						}
+					);
+				}
 			}
 			function createTable(){
 				db=openDatabase("Gastos","1.0","Gastos",65536);
@@ -123,6 +139,8 @@
 								"INSERT INTO entries (product,saldo) VALUES (?,?);",
 								 [product,saldo],
 								 function(){
+									 ids=ids+1;
+									 localStorage.ids=ids;
 									 actualizarGastos();
 								 },
 								errorHandler
@@ -136,11 +154,21 @@
 				divnuevogasto.style.display="none";
 			}
 			function obtentConfig(){
-				if (!localStorage.maxgastar){
+				if (!localStorage.maxgastar && !localStorage.ids){
 					maxgastar=50;
+					ids=0;
+				}
+				else if (!localStorage.maxgastar && localStorage.ids){
+					maxgastar=50;
+					ids=localStorage.ids;
+				}
+				else if (!localStorage.ids && localStorage.maxgastar){
+					maxgastar=localStorage.maxgastar;
+					ids=0;
 				}
 				else{
 					maxgastar=localStorage.maxgastar;
+					ids=localStorage.ids;
 				}
 			}	
 			function verConfig(){
@@ -160,6 +188,7 @@
 			}
 			obtentConfig();
 			createTable();
+			actualizarGastos();
 		</script>
 	</body>
 </html>
