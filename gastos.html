@@ -108,7 +108,7 @@
 					db.transaction(
 						function(transaction){
 							transaction.executeSql(
-								"SELECT * FROM entries WHERE id=?;",
+								"SELECT * FROM entries WHERE ID=?;",
 								[id],
 								function(transaction,results){
 									var row=results.rows.item(0);
@@ -128,7 +128,7 @@
 					function(transaction){
 						transaction.executeSql(
 							"CREATE TABLE IF NOT EXISTS entries "+
-							" ( id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+							" ( ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
 							" product TEXT NOT NULL, saldo DECIMAL NOT NULL);"
 						);
 					}
