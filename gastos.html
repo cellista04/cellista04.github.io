@@ -132,6 +132,9 @@
 				db.transaction(
 					function(trans){
 						trans.executeSql("DELETE FROM entries WHERE ID=?",[id]);
+						for (var id=1;id<=ids;id++){
+							actualizarGastos(id);
+						}
 					}
 				);
 			}
