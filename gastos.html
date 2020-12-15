@@ -121,7 +121,7 @@
 								var name_product=row.product;
 								var saldo_product=row.saldo;
 								var id=row.ID;
-								gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button onclick='eliminar('"+id+"');' class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
+								gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button onclick='eliminar("+id+");' class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
 							},
 							errorHandler
 						);
