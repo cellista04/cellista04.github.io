@@ -120,10 +120,18 @@
 								var row=results.rows.item(0);
 								var name_product=row.product;
 								var saldo_product=row.saldo;
-								gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
+								var id=row.ID;
+								gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button onclick='eliminar('"+id+"');' class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
 							},
 							errorHandler
 						);
+					}
+				);
+			}
+			function eliminar(id){
+				db.transaction(
+					function(trans){
+						trans.executeSql("DELETE FROM entries WHERE ID=?",[id]);
 					}
 				);
 			}
