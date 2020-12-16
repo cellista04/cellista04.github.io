@@ -114,14 +114,16 @@
 				db.transaction(
 					function(transaction){
 						transaction.executeSql(
-							"SELECT * FROM entries WHERE ID=?;",
-							[id],
+							"SELECT * FROM entries;",
+							[],
 							function(transaction,results){
-								var row=results.rows.item(0);
-								var name_product=row.product;
-								var saldo_product=row.saldo;
-								var id=row.ID;
-								gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button onclick='eliminar("+id+");' class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
+								for (var i=0;i<results.rows.length;i++){
+									var row=results.rows.item(i);
+									var name_product=row.product;
+									var saldo_product=row.saldo;
+									var id=row.ID;
+									gastos.innerHTML="<div style='width:200px;height:50px;'><a>"+name_product+"</a><br><a>"+saldo_product+"</a><button onclick='eliminar("+id+");' class='button_delete'>Eliminar</button></div>"+gastos.innerHTML;
+								}
 							},
 							errorHandler
 						);
@@ -160,9 +162,7 @@
 								 function(){
 									 ids=ids+1;
 									 localStorage.ids=ids;
-									 for (var id=1;id<=ids;id++){
-									 	actualizarGastos(id);
-									 }
+									 actualizarGastos();
 								 },
 								errorHandler
 							);
